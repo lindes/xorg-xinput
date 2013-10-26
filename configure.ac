@@ -53,6 +53,7 @@ PKG_CHECK_MODULES(XI21, [xi >= 1.4.99.1] [inputproto >= 2.0.99.1],
 PKG_CHECK_MODULES(XI22, [xi >= 1.5.99.1] [inputproto >= 2.1.99.1],
                   AC_DEFINE(HAVE_XI22, 1, [XI2.2 available]));
 
-AC_OUTPUT([Makefile
+AC_CONFIG_FILES([Makefile
            src/Makefile
            man/Makefile])
+AC_OUTPUT
