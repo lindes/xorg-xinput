@@ -149,7 +149,6 @@ static void print_rawevent(XIRawEvent *event)
 
     printf("    device: %d (%d)\n", event->deviceid, event->sourceid);
     printf("    detail: %d\n", event->detail);
-    printf("    valuators:\n");
 #if HAVE_XI21
     switch(event->evtype) {
         case XI_RawButtonPress:
@@ -160,6 +159,7 @@ static void print_rawevent(XIRawEvent *event)
     }
 #endif
 
+    printf("    valuators:\n");
     val = event->valuators.values;
     raw_val = event->raw_values;
     for (i = 0; i < event->valuators.mask_len * 8; i++)
