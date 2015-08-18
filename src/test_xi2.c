@@ -60,6 +60,15 @@ static void print_deviceevent(XIDeviceEvent* event)
             printf("    flags: %s\n", (event->flags & XIPointerEmulated) ?  "emulated" : "");
             break;
 #endif
+#if HAVE_XI22
+        case XI_TouchBegin:
+        case XI_TouchUpdate:
+        case XI_TouchEnd:
+            printf("    flags:%s%s\n",
+                   (event->flags & XITouchPendingEnd) ?  " pending_end" : "",
+                   (event->flags & XITouchEmulatingPointer) ?  " emulating" : "");
+            break;
+#endif
     }
 
     printf("    root: %.2f/%.2f\n", event->root_x, event->root_y);
