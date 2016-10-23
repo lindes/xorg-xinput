@@ -273,7 +273,7 @@ find_device_info(Display	*display,
     return found;
 }
 
-#ifdef HAVE_XI2
+#if HAVE_XI2
 Bool is_pointer(int use)
 {
     return use == XIMasterPointer || use == XISlavePointer;

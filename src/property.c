@@ -714,7 +714,7 @@ do_set_prop_xi2(Display *dpy, Atom type, int format, int argc, char **argv, char
 int list_props(Display *display, int argc, char *argv[], char *name,
                char *desc)
 {
-#ifdef HAVE_XI2
+#if HAVE_XI2
     if (xinput_version(display) == XI_2_Major)
         return list_props_xi2(display, argc, argv, name, desc);
 #endif
@@ -725,7 +725,7 @@ int list_props(Display *display, int argc, char *argv[], char *name,
 int delete_prop(Display *display, int argc, char *argv[], char *name,
                 char *desc)
 {
-#ifdef HAVE_XI2
+#if HAVE_XI2
     if (xinput_version(display) == XI_2_Major)
         return delete_prop_xi2(display, argc, argv, name, desc);
 #endif
@@ -736,7 +736,7 @@ int delete_prop(Display *display, int argc, char *argv[], char *name,
 static int
 do_set_prop(Display *display, Atom type, int format, int argc, char *argv[], char *name, char *desc)
 {
-#ifdef HAVE_XI2
+#if HAVE_XI2
     if (xinput_version(display) == XI_2_Major)
         return do_set_prop_xi2(display, type, format, argc, argv, name, desc);
 #endif

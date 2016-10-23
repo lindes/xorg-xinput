@@ -376,7 +376,7 @@ test_xi2(Display	*display,
     XISetMask(m->mask, XI_Leave);
     XISetMask(m->mask, XI_FocusIn);
     XISetMask(m->mask, XI_FocusOut);
-#ifdef HAVE_XI22
+#if HAVE_XI22
     XISetMask(m->mask, XI_TouchBegin);
     XISetMask(m->mask, XI_TouchUpdate);
     XISetMask(m->mask, XI_TouchEnd);
@@ -394,7 +394,7 @@ test_xi2(Display	*display,
     XISetMask(m->mask, XI_RawButtonPress);
     XISetMask(m->mask, XI_RawButtonRelease);
     XISetMask(m->mask, XI_RawMotion);
-#ifdef HAVE_XI22
+#if HAVE_XI22
     XISetMask(m->mask, XI_RawTouchBegin);
     XISetMask(m->mask, XI_RawTouchUpdate);
     XISetMask(m->mask, XI_RawTouchEnd);
