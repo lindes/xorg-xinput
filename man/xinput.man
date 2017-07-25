@@ -87,7 +87,7 @@ instead.
 .B --set\-prop [\-\-type=\fIatom|float|int\fP] [\-\-format=\fI8|16|32\fP] \fIdevice\fP \fIproperty\fP \fIvalue\fP [...]
 Set the property to the given value(s).  If not specified, the format and type
 of the property are left as-is.  The arguments are interpreted according to the
-property type.
+property type. See Section \fICHANGING PROPERTIES\fP.
 .PP
 .TP 8
 .B --watch-props \fIdevice\fP
@@ -171,6 +171,13 @@ device.
 .PP
 \fIproperty\fP can be the property as a string or the Atom value.
 .PP
+.SH "CHANGING PROPERTIES"
+When xinput should modify an existing driver property value, it is
+sufficient to provide the device name and property name as string, followed
+by the new value(s) of the property. For example:
+.IP
+\fBxinput set-prop "my device" "my prop" 1 2 3\fB
+
 .SH "SEE ALSO"
 X(__miscmansuffix__), xset(__appmansuffix__), xrandr(__appmansuffix__)
 .SH COPYRIGHT
