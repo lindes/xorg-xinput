@@ -358,6 +358,10 @@ test_xi2(Display	*display,
     if (argc >= 1) {
         XIDeviceInfo *info;
         info = xi2_find_device_info(display, argv[0]);
+        /* info is alway valid, the list() call exits if the device
+           cannot be found, but let's shut up coverity */
+        if (!info)
+            return EXIT_FAILURE;
         deviceid = info->deviceid;
     }
 
