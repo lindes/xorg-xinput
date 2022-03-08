@@ -105,7 +105,7 @@ static entry drivers[] =
       test_xi2,
     },
     { "map-to-output",
-      "<device> <output name>",
+      "<device> <output name>|all",
       map_to_output,
     },
 #endif

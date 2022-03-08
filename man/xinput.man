@@ -149,6 +149,7 @@ Restricts the movements of the absolute \fIdevice\fP to the RandR
 detected or RandR 1.2 or later is not available, a Xinerama output may be
 specified as "HEAD-N", with N being the Xinerama screen number. This option
 has no effect on relative devices.
+If crtc is set to "all", the default behavior is applied.
 .PP
 .TP 8
 .B --enable \fIdevice\fP
