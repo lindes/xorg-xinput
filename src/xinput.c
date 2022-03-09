@@ -352,7 +352,7 @@ usage(void)
 {
     entry	*pdriver = drivers;
 
-    fprintf(stderr, "usage :\n");
+    fprintf(stderr, "usage:\n");
 
     while(pdriver->func_name) {
 	fprintf(stderr, "\txinput %s %s\n", pdriver->func_name,
