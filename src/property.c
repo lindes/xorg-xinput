@@ -803,6 +803,52 @@ set_float_prop(Display *dpy, int argc, char** argv, char* n, char *desc)
     return do_set_prop(dpy, float_atom, 32, argc, argv, n, desc);
 }
 
+int get_prop(Display *dpy, int argc, char *argv[], char *name,
+	     char *desc)
+{
+    XDeviceInfo *info;
+    XDevice     *dev;
+    Atom         prop;
+    int          rc = EXIT_SUCCESS;
+    int          i = 1;
+
+    if(argc < 2)
+    {
+        fprintf(stderr, "Usage: xinput %s %s\n", name, desc);
+        return EXIT_FAILURE;
+    }
+
+    info = find_device_info(dpy, argv[0], False);
+    if (!info)
+    {
+	fprintf(stderr, "unable to find device '%s'\n", argv[0]);
+	return EXIT_FAILURE;
+    }
+
+    dev = XOpenDevice(dpy, info->id);
+    if (!dev)
+    {
+	fprintf(stderr, "unable to open device '%s'\n", info->name);
+	return EXIT_FAILURE;
+    }
+
+    printf("Device '%s':\n", info->name);
+    while(i < argc) {
+	prop = parse_atom(dpy, argv[i]);
+	if (prop == None) {
+	    fprintf(stderr, "invalid property '%s'\n", name);
+            rc = EXIT_FAILURE;
+	    continue;
+	}
+
+	print_property(dpy, dev, prop);
+	i++;
+    }
+
+    XCloseDevice(dpy, dev);
+    return rc;
+}
+
 int set_prop(Display *display, int argc, char *argv[], char *name,
              char *desc)
 {

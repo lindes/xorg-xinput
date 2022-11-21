@@ -68,6 +68,7 @@ int set_float_prop( Display* display, int argc, char *argv[], char *prog_name, c
 int set_atom_prop( Display* display, int argc, char *argv[], char *prog_name, char *prog_desc);
 int watch_props( Display* display, int argc, char *argv[], char *prog_name, char *prog_desc);
 int delete_prop( Display* display, int argc, char *argv[], char *prog_name, char *prog_desc);
+int get_prop( Display* display, int argc, char *argv[], char *prog_name, char *prog_desc);
 int set_prop( Display* display, int argc, char *argv[], char *prog_name, char *prog_desc);
 int disable( Display* display, int argc, char *argv[], char *prog_name, char *prog_desc);
 int enable( Display* display, int argc, char *argv[], char *prog_name, char *prog_desc);

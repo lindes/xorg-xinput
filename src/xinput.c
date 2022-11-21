@@ -133,6 +133,10 @@ static entry drivers[] =
       "<device> <property>",
       delete_prop
     },
+    { "get-prop",
+      "<device> <property> [<property> ...]",
+      get_prop
+    },
     { "set-prop",
       "<device> [--type=atom|float|int] [--format=8|16|32] <property> <val> [<val> ...]",
       set_prop
